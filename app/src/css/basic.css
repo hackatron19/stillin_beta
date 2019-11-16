@@ -1,0 +1,19 @@
+.box{
+    border: 2px solid black;
+    border-radius:10px;
+    margin:5px;
+    padding:5px;
+}
+#input{
+    margin:20px;
+    width:80%;
+    height:60px;
+}
+#form{
+    margin:20px;
+    text-align:center;
+}
+
+#heading{
+    text-align:center;
+}
