@@ -10,7 +10,8 @@ const drizzle = new Drizzle(drizzleOptions, drizzleStore);
 
 class App extends Component {
   constructor(){
-    super()
+    super();
+    console.log();
   }
   render() {
     // console.log(drizzle);

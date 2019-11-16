@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import { Grid, TextField,Button, Box, Typography, Card } from '@material-ui/core';
 
-class CreateMedicalProfessional extends Component{
+class CreateVerifier extends Component{
     state = {
         name: '',
         address: '',
@@ -60,7 +59,7 @@ class CreateMedicalProfessional extends Component{
         const { accounts } = this.state.drizzleState
         
         const txId = Insurance
-            .methods['addMedicalProfessional']
+            .methods['addVerifier']
             .cacheSend(
                 address, name,
                 {from: accounts[0]}
@@ -74,71 +73,24 @@ class CreateMedicalProfessional extends Component{
     render(){
         const {transactions, transactionStack } = this.props.drizzleState;
         const txHash = transactionStack[this.state.txId];
-        // console.log()
+        // console.log();
 
         return(
-            <Grid
-            container
-                direction = "row"
-                justify = "center"
-                alignItems = "center"
-                xs={12}
-                md={12}
-                lg={6}>
-                    <Card raised='true' style={{width:'90vh',justifyContent:'center',alignContent:'center',textAlign:'center'}}>
-                <Grid
-                container
-                direction = "row"
-                justify = "center"
-                alignItems = "center"
-                xs={12}
-                md={12}
-                lg={6}
-                >
-                <TextField
-                    id="filled-textarea"
-                    label="Doctor's Name"
-                    placeholder="Name of the Doctor"
-                    multiline
-                    fullWidth
-                    margin="normal"
-                    variant="filled"
-                    />
-                {/* </Grid>
-                <Grid
-                container
-                direction = "row"
-                justify = "center"
-                alignItems = "center"
-                xs={12}
-                md={12}
-                lg={6}
-                > */}
-                <TextField
-                    id="filled-textarea"
-                    label="Doctor's Address"
-                    placeholder="Address of the Doctor"
-                    multiline
-                    fullWidth
-                    margin="normal"
-                    variant="filled"
-                    />
-                </Grid>
+            <div>
                 <form>
-                    Enter Medical Professional's name: <input type="text" onChange={this.handleNameChange} 
-                    id="mname"/>
+                    Enter Verifier's name: <input type="text" onChange={this.handleNameChange} 
+                    id="vname"/>
                     <br/>
-                    Enter Medical Professional's address: <input type="text" onChange={this.handleAddressChange} 
-                    id="maddress"/>
+                    Enter Verifier's address: <input type="text" onChange={this.handleAddressChange} 
+                    id="vaddress"/>
                     <br/>
                     <button onClick={this.handleClick}>Submit</button>
                 </form>
                 <p>{txHash ? `Transaction status: ${transactions[txHash]
                 && transactions[txHash].status}`: null}</p>
-            </Card>
-            </Grid>
+            </div>
         )
     }
 }
 
-export default CreateMedicalProfessional;
+export default CreateVerifier;

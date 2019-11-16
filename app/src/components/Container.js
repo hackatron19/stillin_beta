@@ -1,12 +1,12 @@
 import React from 'react';
 import { DrizzleContext } from 'drizzle-react';
 import LoadingComponent from './LoadingComponent';
-// import ReadData from './ReadData';
-// import WriteData from './WriteData';
+import CreateVerifier from "./create/CreateVerifier";
 import CreateClient from './create/CreateClient';
 import CreateMedicalProfessional from './create/CreateMedicalProfessonal';
-import Checkout from './ClientRegister/Checkout';
-import ButtonAppBar from './ClientRegister/Nj/ButtonAppBar';
+import ClientList from "./lists/Clients";
+import MedicalProfessionalsList from "./lists/MedicalProfessionals";
+import VerifiersList from "./lists/Verifiers";
 
 const Container = (props) =>(
  
@@ -23,9 +23,13 @@ const Container = (props) =>(
                 <h1>Medical Insurance Application</h1>
               </div>
               {/* <CreateClient drizzleState={drizzleState} drizzle={drizzle}/> */}
-              {/* <Checkout  drizzleState={drizzleState} drizzle={drizzle}/>     */}
-              <ButtonAppBar drizzleState={drizzleState} drizzle={drizzle} />
-              {/* <CreateMedicalProfessional drizzleState={drizzleState}  drizzle={drizzle}/> */}
+              <CreateMedicalProfessional drizzleState={drizzleState} drizzle={drizzle}/>
+              {/* <CreateVerifier drizzleState={drizzleState} drizzle={drizzle}/> */}
+
+              {/* <ClientList drizzleState={drizzleState} drizzle={drizzle}/> */}
+              {/* <MedicalProfessionalsList drizzleState={drizzleState} drizzle={drizzle}/> */}
+              {/* <VerifiersList drizzleState={drizzleState} drizzle={drizzle}/> */}
+
               {/* <WriteData drizzleState={drizzleState} drizzle={drizzle}/> */}
               {/* <ReadData drizzleState={drizzleState} drizzle={drizzle}/> */}
            </div>

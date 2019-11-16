@@ -183,7 +183,7 @@ const niraj=(e)=>{
             ) : (
               <React.Fragment>
                 {/* {getStepContent(activeStep)} */}
-                {activeStep==0?<AddressForm  {...this.props} handleForm={niraj} />:null}
+                {activeStep==0?<AddressForm  {...props} handleForm={niraj} />:null}
                 {activeStep==1? <HeathStatus /> :null}
 
                 <div className={classes.buttons}>

@@ -13,9 +13,15 @@ export default class AddressForm extends Component{
   // 
 
   state = {
-    name: '',
-    txId: '',
+    firstName: '',
+    address1:'',
+    city:'',
+    state:'',
+    zip:'',
+    country:'',
 
+    txId: '',
+    
     web3: {},
     contract: {},
     events: [],
@@ -26,10 +32,9 @@ export default class AddressForm extends Component{
   };
 
  niraj = (e) => {
-    const x = {
-      name: e.target.name,
-      value: e.target.value
-    };
+   this.setState({
+     [e.target.name]:e.target.value
+   })
 
   }
 
@@ -87,8 +92,12 @@ export default class AddressForm extends Component{
 
     const {
       Insurance,
-      name
+      address1, firstName, city, state,zip,country
     } = this.state;
+
+    // var string1 = JSON.stringify(this.state)
+
+
     const {
       accounts
     } = this.state.drizzleState
@@ -96,10 +105,12 @@ export default class AddressForm extends Component{
     const txId = Insurance
       .methods['addClient']
       .cacheSend(
-        accounts[0], name, {
+        accounts[0], firstName, address1+ " "+ city+ " "+ state+ " " +zip+ " "+ country , {
           from: accounts[0]
-        }
-      );
+        })
+      // ).then((res)=>{
+      //   console.log(res);
+      // });
 
     // console.log(accounts[0]);
     // console.log(name);
@@ -210,6 +221,8 @@ render(){
             label="Use this address for payment details"
           />
         </Grid> */}
+            <button onClick={this.handleClick}>Submit</button>
+
       </Grid>
     </React.Fragment>
   );
