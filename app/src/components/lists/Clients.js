@@ -54,12 +54,10 @@ class ClientList extends Component{
             <div>
                 {
                     events.map(event => (
-                        
                         <div key={event.transactionHash}>
                             Name: {event.returnValues[1]}<br/>
-                            Address: {event.returnValues[0]} <br/>
+                            Address: {event.returnValues[0]}
                             param 2: {event.returnValues[2]}
-                            <br/>   
                         </div>
                     ))
                 }

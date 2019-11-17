@@ -4,6 +4,7 @@ import { DrizzleContext } from 'drizzle-react';
 import drizzleOptions from './drizzleOptions';
 import Container from './components/Container';
 import './css/basic.css';
+import ContainerHomePage from './components/ContainerHomePage';
 
 const drizzleStore = generateStore(drizzleOptions);
 const drizzle = new Drizzle(drizzleOptions, drizzleStore);

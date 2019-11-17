@@ -77,62 +77,72 @@ class CreateMedicalProfessional extends Component{
         // console.log()
 
         return(
-            <Grid
+             < Grid
             container
-                direction = "row"
-                justify = "center"
-                alignItems = "center"
-                xs={12}
-                md={12}
-                lg={6}>
+            direction = "row"
+            justify = "center"
+            alignItems = "center" 
+            xs={12} md={12} lg={12}>
+               
                     <Card raised='true' style={{width:'90vh',justifyContent:'center',alignContent:'center',textAlign:'center'}}>
-                <Grid
+               
+                {/* For Doctors<br/> */}
+                 {
+                    /* <Grid
                 container
                 direction = "row"
                 justify = "center"
-                alignItems = "center"
-                xs={12}
-                md={12}
-                lg={6}
-                >
-                <TextField
-                    id="filled-textarea"
-                    label="Doctor's Name"
-                    placeholder="Name of the Doctor"
-                    multiline
-                    fullWidth
-                    margin="normal"
-                    variant="filled"
-                    />
-                {/* </Grid>
-                <Grid
-                container
-                direction = "row"
-                justify = "center"
-                alignItems = "center"
-                xs={12}
-                md={12}
+                alignItems = "center" 
+                xs={12} md={12} lg={12}>
+                    <Grid
+                xs={11}
+                md={6}
                 lg={6}
                 > */}
                 <TextField
                     id="filled-textarea"
-                    label="Doctor's Address"
-                    placeholder="Address of the Doctor"
+                    label="Doctor's Name and Details"
+                    placeholder="Name of the Doctor & Details"
                     multiline
-                    fullWidth
+                    style={{width:'80%',}}
                     margin="normal"
                     variant="filled"
+                    onChange={this.handleNameChange}
+                    />
+                    {/* </Grid> */}
+                {/* </Grid> */}
+                <Grid
+                container
+                direction = "row"
+                justify = "center"
+                alignItems = "center"
+                xs={12}
+                md={12}
+                lg={12}
+                >
+                <TextField
+                    id="filled-textarea"
+                    label="Public Key for Medical Officer"
+                    placeholder="Public Key "
+                    multiline
+                     style={{width:'80%',}}
+                    margin="normal"
+                    variant="filled"
+                    onChange={this.handleAddressChange} 
                     />
                 </Grid>
-                <form>
-                    Enter Medical Professional's name: <input type="text" onChange={this.handleNameChange} 
+                {/* <form>
+                    Enter Medical Professional's name: <input type="text"  
                     id="mname"/>
                     <br/>
-                    Enter Medical Professional's address: <input type="text" onChange={this.handleAddressChange} 
+                    Enter Medical Professional's address: <input type="text" 
                     id="maddress"/>
-                    <br/>
-                    <button onClick={this.handleClick}>Submit</button>
-                </form>
+                    <br/> */}
+                    {/* <button onClick={this.handleClick}>Submit</button> */}
+                    <Button variant="contained" color="primary" onClick={this.handleClick}>
+                            Submit
+                        </Button>
+                {/* </form> */}
                 <p>{txHash ? `Transaction status: ${transactions[txHash]
                 && transactions[txHash].status}`: null}</p>
             </Card>
