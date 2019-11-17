@@ -145,9 +145,7 @@ class CreateClient extends Component{
                        margin = "normal"
                        helperText = "Enter UID"
                        name = "address"
-                       onChange = {
-                           this.handleAddressChange
-                       }
+                       
                        />
                       <TextField
                         id="standard-basic"

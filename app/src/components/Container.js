@@ -38,7 +38,7 @@ const Container = (props) =>(
               {/* <ClientList drizzleState={drizzleState} drizzle={drizzle}/> */}
               {/* <RegisterClient drizzleState={drizzleState} drizzle={drizzle}/> */}
               {/* <MedicalProfessionalsList drizzleState={drizzleState} drizzle={drizzle}/> */}
-              {/* <VerifiersList drizzleState={drizzleState} drizzle={drizzle}/> */}
+              {/* <VerifiersList drizzleState={drizzleState} drizzle={drizzle}/>   */}
 
               {/* <CreateClaim drizzleState={drizzleState} drizzle={drizzle}/> */}
               {/* <MedicalReview drizzleState={drizzleState} drizzle={drizzle}/> */}
